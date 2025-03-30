@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root{
+    --header-height: 3.5rem;
+    --border-section: 56px 56px 0 0;
+
+    /*===========Colors===========*/
+    /*Color mode HLS (hue, saturation, lightness)*/
+    --first-color: hsl(174, 37%, 60%);
+    --first-color-alt: hsl(195, 37%, 60%);
+    --first-color-light: hsl(174, 51%, 71%);
+    --second-color: hsl(211, 66%, 40%);
+    --title-color: hsl(255, 7%, 11%);
+    --text-color: hsl(255,7%, 11%);
+    --text-color-light:hsl(210, 29%, 29%);
+    --white-color: #fdfefe;
+
+    /*===========Typography===========*/
+    /*.5 rem = 8px | 1 rem = 16px ...*/
+    --body-font: 'Inter', Arial;
+    --second-font: "Pacifico", cursive;
+    --biggest-font-size: 2.75rem;
+    --big-font-size: 1.75rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+
+    /*===========Font weight==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*===========z index===========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+
+    /*=========Responsive typography==========*/
+    @media  screen and (min-width: 1024px) {
+        :root {
+            --biggest-font-size: 4.5rem;
+            --big-font-size: 3rem;
+            --h1-font-size: 2.25rem;
+            --h2-font-size: 1.5rem;
+            --h3-font-size: 1.25rem;
+            --normal-font-size: 1rem;
+            --small-font-size: 0.875rem;
+            --smaller-font-size: 0.813rem;
+        }
+    }
+
+    /*=============Base==============*/
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--body-font);
+        font-size: var(--normal-font-size);
+        background-color: var(--white-color);
+        color: var(--text-color);
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /*============Reusable CSS Classes==========*/
+    .container {
+        max-width: 1120px;
+        margin-inline: 1.5rem; /*margin right and left*/
+    }
+
+    .grid {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .section {
+        padding-block: 4.5rem; /*Padding top and bottom */
+    }
+
+    .section_title {
+        color: var(--title-color);
+        font-size: var(--big-font-size);
+        font-family: var(--second-font);
+        font-weight: var(--font-regular);
+        line-height: 120%;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .main {
+        overflow: hidden; /* For animation scrolReveal*/
+    }
+
+    /*==========Header & Nav=========*/
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--first-color);
+        z-index: var(--z-fixed);
+    }
+
+    .header__border {
+        width: 100%;
+        height: 2px;
+        background-image: linear-gradient(
+            90deg,
+            var(--text-color-light) 50%,
+            transparent 50
+        );
+        background-size: 24px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: opacity 0.3s;
+    }
+}
