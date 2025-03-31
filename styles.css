@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
 :root{
     --header-height: 3.5rem;
@@ -17,8 +17,8 @@
 
     /*===========Typography===========*/
     /*.5 rem = 8px | 1 rem = 16px ...*/
-    --body-font: 'Inter', Arial;
-    --second-font: "Pacifico", cursive;
+    --body-font: 'Fredoka', Arial;
+    --second-font: "Inter medium", Arial;
     --biggest-font-size: 2.75rem;
     --big-font-size: 1.75rem;
     --h1-font-size: 1.5rem;
@@ -136,5 +136,256 @@
         bottom: 0;
         left: 0;
         transition: opacity 0.3s;
+    }
+
+    .nav {
+        height: var(--header-height);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav__logo {
+        color: var(--white-color);
+        display: flex;
+        align-items: center;
+        column-gap: 0.5rem;
+        font-size: var(--h3-font-size);
+        font-family: var(--second-font);
+    }
+
+    .nav__logo img {
+        width: 200px;
+    }
+
+    /* Navigation for mobile devices */
+    @media screen and (max-width: 1023px) {
+        .nav__menu {
+            position: fixed;
+            bottom: 0;
+            background: linear-gradient(
+                180deg,
+                var (--first-color) 0%,
+                var(--first-color-alt) 100%
+            );
+            border-radius: 56px 56px 0 0;
+            box-shadow: 0 -2px 12px hsla(12, 32%, 12%, 0.3);
+            width: 100%;
+            padding: 1.5rem 4rem;
+        }
+    }
+
+    .nav__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav__link {
+        color: var(--white-color);
+        font-family: var(--second-font);
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 0.25rem;
+        transition: color 0.3s;
+    }
+
+    .nav__link i {
+        background: linear-gradient(
+            180deg,
+            hsl(211, 66%, 40%) 0%,
+            hsl(210, 29%, 29%) 100%
+        );
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-size: 1.5rem;
+    }
+
+    .nav__link:hover {
+        color: var(--second-color);
+    }
+
+    /*=========== Home ===========*/
+    .home {
+        background: linear-gradient(
+            180deg,
+            var(--first-color) 0%,
+            var(--first-color-alt) 100%
+        );
+    }
+
+    .home__container {
+        padding-top: 2rem;
+        row-gap: 2rem;
+    }
+
+    .home__data {
+        text-align: center;
+    }
+
+    .home__subtitle {
+        font-size: var(--normal-font-size);
+        color: var(--second-color);
+        font-weight: var(--font-medium);
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+    }
+
+    .home__title,
+    .home__description {
+        color: var(--white-color);
+    }
+
+    .home__title {
+        text-align: initial;
+        font-size: var(--biggest-font-size);
+        font-family: var(--second-font);
+        font-weight: var(--font-regular);
+        line-height: 120%;
+        margin: 0 auto 2rem;
+        position: relative;
+        width: max-content;
+    }
+
+    .home__title img {
+        width: 88px;
+        position: absolute;
+        right: -1rem;
+        bottom: -1.25rem;
+    }
+
+    .home__description {
+        margin-bottom: 2rem;
+    }
+    .home__img {
+        width: 320px;
+        justify-self: center;
+      }
+
+
+    /*=========== Button ============*/
+    .button {
+        display: inline-flex;
+        align-items: center;
+        column-gap: 0.5rem;
+        background-color: var(--second-color);
+        padding: 1rem 1.5rem;
+        border-radius: 4rem;
+        color: var(--title-color);
+        font-weight: var(--font-medium);
+        box-shadow: 0 8px 32px hsla(39, 62%, 65%, 0.25);
+        transition: box-shadow 0.3s;
+    }
+
+    .button i {
+        font-size: 1.5rem;
+        transition: transform 0.3;
+    }
+
+    .button:hover i {
+        box-shadow: 0 8px 48px hsla(39, 62%, 65%, 0.3);
+    }
+
+    .button:hover i {
+        transform: translateX(0.25rem);
+    }
+
+    /*==========Breakpoints===========*/
+    /* For small devices */
+    @media screen and (max-width: 300px) {
+        .container {
+            margin-inline: 1rem; /*margin right and left */
+        }
+
+        .nav__menu {
+            padding-inline: 3rem; /* padding right and left */
+        }
+
+        .home__title {
+            width: 220px;
+            text-align: center;
+        }
+
+        .home__title img {
+            bottom: 2.5rem;
+        }
+
+        .products__content {
+            grid-template-columns: 1fr;
+        }
+    
+        .steps__content {
+            row-gap: 3rem;
+        }
+    
+        .steps__card {
+            width: initial;
+        }
+    
+        .steps__border {
+            left: 0;
+            top: 5.5rem;
+        }
+    }
+
+    @media screen and (min-width: 400px) {
+        .steps__content {
+            grid-template-columns: 325px;
+            justify-content: center;
+        }
+    }
+
+    /*For medium devices*/
+    @media screen and (min-width: 576px) {
+        .nav__menu {
+            width: 375px;
+        }
+    }
+ 
+
+    /* for large devices */
+    @media screen and (min-width: 1023px) {
+        .section {
+            padding-block: 7.5rem 5.5rem; /* padding top and bottom */
+            --border-section: 104px 104px 0 0;
+        }
+
+        .nav {
+            height: calc(var(--header-height) + 2rem);
+            justify-content: space-between;
+        }
+
+        .nav__logo img {
+            width: 250px;
+        }
+
+        .nav__menu {
+            width: initial;
+        }
+
+        .nav__list {
+            column-gap: 4.5rem;
+        }
+
+        .nav__link {
+            font-size: var(--normal-font-size);
+        }
+
+        .nav__link i {
+          display: none;  
+        }
+
+        .home__container {
+            grid-template-columns: max-content 440px;
+            align-items: center;
+            padding-top: 3rem;
+        }
+
+        .home__img {
+            order: -1;
+            width: 450px;
+          }
     }
 }
